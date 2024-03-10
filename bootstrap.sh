@@ -5,14 +5,10 @@ DOTFILES_DIR=~/dotfiles
 
 # Create a symlink for Neovim configuration.
 NVIM_CONFIG_DIR=~/.config/nvim
-if [ ! -d "$NVIM_CONFIG_DIR" ]; then
-    mkdir -p "$NVIM_CONFIG_DIR"
-fi
-
-if [ -L "$NVIM_CONFIG_DIR/init.vim" ] || [ -e "$NVIM_CONFIG_DIR/init.vim" ]; then
+if [ -L "$NVIM_CONFIG_DIR" ] || [ -e "$NVIM_CONFIG_DIR" ]; then
     echo "Existing Neovim configuration detected. Please remove it before proceeding."
 else
-    ln -s $DOTFILES_DIR/.config/nvim/init.vim $NVIM_CONFIG_DIR/init.vim
+    ln -s $DOTFILES_DIR/nvim $NVIM_CONFIG_DIR
     echo "Neovim configuration linked."
 fi
 
@@ -21,7 +17,7 @@ HELIX_CONFIG_DIR=~/.config/helix
 if [ -L "$HELIX_CONFIG_DIR" ] || [ -e "$HELIX_CONFIG_DIR" ]; then
     echo "Existing Helix configuration detected. Please remove it before proceeding."
 else
-    ln -s $DOTFILES_DIR/.config/helix $HELIX_CONFIG_DIR
+    ln -s $DOTFILES_DIR/helix $HELIX_CONFIG_DIR
     echo "Helix configuration linked."
 fi
 
