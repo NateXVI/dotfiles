@@ -1,23 +1,15 @@
 # dotfiles
 
-## Getting Started
+## Getting started
 
-### Install Nix
-
-Follow the instructions [here](https://github.com/DeterminateSystems/nix-installer).
-
-### Install Home Manager
+### Install packages
 
 ```bash
-nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --update
-nix-shell '<home-manager>' -A install
+./install_packages.sh
 ```
 
-Add Home Manager to `~/.profile`
+### Run setup
 
 ```bash
-source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+./setup.sh
 ```
-
-
