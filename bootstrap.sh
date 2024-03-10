@@ -16,6 +16,15 @@ else
     echo "Neovim configuration linked."
 fi
 
+# Create a symlink for Helix configuration.
+HELIX_CONFIG_DIR=~/.config/helix
+if [ -L "$HELIX_CONFIG_DIR" ] || [ -e "$HELIX_CONFIG_DIR" ]; then
+    echo "Existing Helix configuration detected. Please remove it before proceeding."
+else
+    ln -s $DOTFILES_DIR/.config/helix $HELIX_CONFIG_DIR
+    echo "Helix configuration linked."
+fi
+
 # Create a symlink for tmux configuration.
 if [ -L ~/.tmux.conf ] || [ -e ~/.tmux.conf ]; then
     echo "Existing tmux configuration detected. Please remove it before proceeding."
