@@ -3,6 +3,11 @@
 # Define the directory where your dotfiles are stored.
 DOTFILES_DIR=~/dotfiles
 
+if [ ! -d "$HOME/.config" ]; then
+    mkdir "$HOME/.config"
+    echo "Config directory created."
+fi
+
 # Create a symlink for Neovim configuration.
 NVIM_CONFIG_DIR=~/.config/nvim
 if [ -L "$NVIM_CONFIG_DIR" ] || [ -e "$NVIM_CONFIG_DIR" ]; then
@@ -31,13 +36,13 @@ fi
 
 # Source env.sh in .bashrc if it's not already being sourced.
 ENV_SH_SOURCE="source $DOTFILES_DIR/env.sh"
-BASHRC=~/.bashrc
+PROFILE=~/.profile
 
-if grep -Fxq "$ENV_SH_SOURCE" "$BASHRC"; then
+if grep -Fxq "$ENV_SH_SOURCE" "$PROFILE"; then
     echo "env.sh is already sourced in .bashrc."
 else
-    echo -e "\n# Source dotfiles environment configurations\n$ENV_SH_SOURCE" >> "$BASHRC"
-    echo "env.sh sourcing added to .bashrc."
+    echo -e "\n# Source dotfiles environment configurations\n$ENV_SH_SOURCE" >> "$PROFILE"
+    echo "env.sh sourcing added to .profile."
 fi
 
 echo "Bootstrap process completed."
