@@ -13,3 +13,9 @@
 ```bash
 ./setup.sh
 ```
+
+### Setup environment
+
+```bash
+source ~/.bashrc
+```
