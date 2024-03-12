@@ -34,6 +34,14 @@ else
     echo "tmux configuration linked."
 fi
 
+# Create a symlink for wsl configuration.
+if [ -L ~/.wslconfig ] || [ -e ~/.wslconfig ]; then
+    echo "Existing wsl configuration detected. Please remove it before proceeding."
+else
+    ln -s $DOTFILES_DIR/.wslconfig ~/.wslconfig
+    echo "wsl configuration linked."
+fi
+
 # Source env.sh in .bashrc if it's not already being sourced.
 ENV_SH_SOURCE="source $DOTFILES_DIR/env.sh"
 PROFILE=~/.profile
