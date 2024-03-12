@@ -6,11 +6,12 @@ sudo nala install -y git curl wget vim htop jq fzf
 
 if ! command -v brew &> /dev/null
 then
-	echo "Homebrew not installed. Installing now..."
-	# Install Homebrew
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo "Homebrew not installed. Installing now..."
+    # Install Homebrew
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 else
-	echo "Homebrew is already installed."
+    echo "Homebrew is already installed."
 fi
 
 
