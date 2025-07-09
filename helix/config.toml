@@ -12,3 +12,8 @@ hidden = true
 
 [editor.indent-guides]
 render = true
+
+[keys.normal]
+A-h = ":buffer-previous"
+A-l = ":buffer-next"
+
