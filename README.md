@@ -14,6 +14,13 @@
 ./setup.sh
 ```
 
+### Source `env.sh` in your shell config
+
+```bash
+# add this line to your .bashrc or .zshrc file
+source ~/dotfiles/env.sh
+```
+
 ### Setup environment
 
 ```bash
