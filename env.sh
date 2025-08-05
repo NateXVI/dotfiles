@@ -10,6 +10,20 @@ alias lg='lazygit'
 # recursively deletes all folders named "node_modules" in the current directory
 alias rmnm='find . -type d -name node_modules -prune -exec rm -rf {} +'
 
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias grep='grep --color=auto'
+    alias ls='ls --color=auto'
+    alias ll='ls --color=auto -alF'
+    alias la='ls --color=auto -A'
+    alias l='ls  --color=auto -CF'
+else
+    alias ll='ls -alF'
+    alias la='ls -A'
+    alias l='ls -CF'
+fi
+
 # dotnet
 export DOTNET_WATCH_SUPPRESS_LAUNCH_BROWSER=true
 export DOTNET_WATCH_RESTART_ON_RUDE_EDIT=true
