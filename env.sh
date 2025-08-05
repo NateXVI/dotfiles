@@ -24,6 +24,19 @@ else
     alias l='ls -CF'
 fi
 
+# fnm
+FNM_PATH="/home/nate/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+if [ -d "$BUN_INSTALL" ]; then
+    export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
 # dotnet
 export DOTNET_WATCH_SUPPRESS_LAUNCH_BROWSER=true
 export DOTNET_WATCH_RESTART_ON_RUDE_EDIT=true
