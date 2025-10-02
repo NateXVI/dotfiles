@@ -9,6 +9,15 @@ alias ta='tmux attach-session'
 alias lg='lazygit'
 # recursively deletes all folders named "node_modules" in the current directory
 alias rmnm='find . -type d -name node_modules -prune -exec rm -rf {} +'
+alias cd1='cd ..'
+alias cd2='cd ../..'
+alias cd3='cd ../../..'
+alias cd4='cd ../../../..'
+alias cd5='cd ../../../../..'
+alias cd6='cd ../../../../../..'
+alias cd7='cd ../../../../../../..'
+alias cd8='cd ../../../../../../../..'
+alias cd9='cd ../../../../../../../../..'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -35,6 +44,14 @@ fi
 export BUN_INSTALL="$HOME/.bun"
 if [ -d "$BUN_INSTALL" ]; then
     export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
+# go
+if [ -d "/usr/local/go" ]; then
+    export PATH="$PATH:/usr/local/go/bin"
+fi
+if [ -d "$HOME/go/bin" ]; then
+    export PATH="$PATH:$HOME/go/bin"
 fi
 
 # dotnet
