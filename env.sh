@@ -7,6 +7,8 @@ alias tn='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias ta='tmux attach-session'
 alias lg='lazygit'
+alias dbe='distrobox-enter'
+alias dbl='distrobox-list'
 # recursively deletes all folders named "node_modules" in the current directory
 alias rmnm='find . -type d -name node_modules -prune -exec rm -rf {} +'
 alias cd1='cd ..'
